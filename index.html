@@ -357,235 +357,266 @@
     </div>
 
     <script>
-        // ---------- Data ----------
-        const syllabusData = {
-            "Physics Second Paper": [
-                { chapter: "Chapter 1: তাপগতিবিদ্যা - মূলবই" },
-                { chapter: "Chapter 1: তাপগতিবিদ্যা - জ্ঞানমূলক" },
-                { chapter: "Chapter 1: তাপগতিবিদ্যা - অনুধাবনমূলক" },
-                { chapter: "Chapter 1: তাপগতিবিদ্যা - সৃজনশীল" },
+const syllabusData = {
+    "Physics Second Paper": [
+        { chapter: "Chapter 1: তাপগতিবিদ্যা - মূলবই" },
+        { chapter: "Chapter 1: তাপগতিবিদ্যা - জ্ঞানমূলক" },
+        { chapter: "Chapter 1: তাপগতিবিদ্যা - অনুধাবনমূলক" },
+        { chapter: "Chapter 1: তাপগতিবিদ্যা - সৃজনশীল" },
+        { chapter: "Chapter 1: তাপগতিবিদ্যা - MCQ" },
 
-                { chapter: "Chapter 2: স্থির তড়িৎ - মূলবই" },
-                { chapter: "Chapter 2: স্থির তড়িৎ - জ্ঞানমূলক" },
-                { chapter: "Chapter 2: স্থির তড়িৎ - অনুধাবনমূলক" },
-                { chapter: "Chapter 2: স্থির তড়িৎ - সৃজনশীল" },
+        { chapter: "Chapter 2: স্থির তড়িৎ - মূলবই" },
+        { chapter: "Chapter 2: স্থির তড়িৎ - জ্ঞানমূলক" },
+        { chapter: "Chapter 2: স্থির তড়িৎ - অনুধাবনমূলক" },
+        { chapter: "Chapter 2: স্থির তড়িৎ - সৃজনশীল" },
+        { chapter: "Chapter 2: স্থির তড়িৎ - MCQ" },
 
-                { chapter: "Chapter 3: চল তড়িৎ - মূলবই" },
-                { chapter: "Chapter 3: চল তড়িৎ - জ্ঞানমূলক" },
-                { chapter: "Chapter 3: চল তড়িৎ - অনুধাবনমূলক" },
-                { chapter: "Chapter 3: চল তড়িৎ - সৃজনশীল" },
+        { chapter: "Chapter 3: চল তড়িৎ - মূলবই" },
+        { chapter: "Chapter 3: চল তড়িৎ - জ্ঞানমূলক" },
+        { chapter: "Chapter 3: চল তড়িৎ - অনুধাবনমূলক" },
+        { chapter: "Chapter 3: চল তড়িৎ - সৃজনশীল" },
+        { chapter: "Chapter 3: চল তড়িৎ - MCQ" },
 
-                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - মূলবই" },
-                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - জ্ঞানমূলক" },
-                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - অনুধাবনমূলক" },
-                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - সৃজনশীল" },
+        { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - মূলবই" },
+        { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - জ্ঞানমূলক" },
+        { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - অনুধাবনমূলক" },
+        { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - সৃজনশীল" },
+        { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - MCQ" },
 
-                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - মূলবই" },
-                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - জ্ঞানমূলক" },
-                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - অনুধাবনমূলক" },
-                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - সৃজনশীল" },
+        { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - মূলবই" },
+        { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - জ্ঞানমূলক" },
+        { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - অনুধাবনমূলক" },
+        { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - সৃজনশীল" },
+        { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - MCQ" },
 
-                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - মূলবই" },
-                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - জ্ঞানমূলক" },
-                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - অনুধাবনমূলক" },
-                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - সৃজনশীল" }
-            ],
+        { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - মূলবই" },
+        { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - জ্ঞানমূলক" },
+        { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - অনুধাবনমূলক" },
+        { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - সৃজনশীল" },
+        { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - MCQ" }
+    ],
 
-            "Chemistry Second Paper": [
-                { chapter: "Chapter 1: পরিবেশ রসায়ন - মূলবই" },
-                { chapter: "Chapter 1: পরিবেশ রসায়ন - জ্ঞানমূলক" },
-                { chapter: "Chapter 1: পরিবেশ রসায়ন - অনুধাবনমূলক" },
-                { chapter: "Chapter 1: পরিবেশ রসায়ন - সৃজনশীল" },
+    "Chemistry Second Paper": [
+        { chapter: "Chapter 1: পরিবেশ রসায়ন - মূলবই" },
+        { chapter: "Chapter 1: পরিবেশ রসায়ন - জ্ঞানমূলক" },
+        { chapter: "Chapter 1: পরিবেশ রসায়ন - অনুধাবনমূলক" },
+        { chapter: "Chapter 1: পরিবেশ রসায়ন - সৃজনশীল" },
+        { chapter: "Chapter 1: পরিবেশ রসায়ন - MCQ" },
 
-                { chapter: "Chapter 2: জৈব যৌগ - মূলবই" },
-                { chapter: "Chapter 2: জৈব যৌগ - জ্ঞানমূলক" },
-                { chapter: "Chapter 2: জৈব যৌগ - অনুধাবনমূলক" },
-                { chapter: "Chapter 2: জৈব যৌগ - সৃজনশীল" },
+        { chapter: "Chapter 2: জৈব যৌগ - মূলবই" },
+        { chapter: "Chapter 2: জৈব যৌগ - জ্ঞানমূলক" },
+        { chapter: "Chapter 2: জৈব যৌগ - অনুধাবনমূলক" },
+        { chapter: "Chapter 2: জৈব যৌগ - সৃজনশীল" },
+        { chapter: "Chapter 2: জৈব যৌগ - MCQ" },
 
-                { chapter: "Chapter 3: পরিমাণগত রসায়ন - মূলবই" },
-                { chapter: "Chapter 3: পরিমাণগত রসায়ন - জ্ঞানমূলক" },
-                { chapter: "Chapter 3: পরিমাণগত রসায়ন - অনুধাবনমূলক" },
-                { chapter: "Chapter 3: পরিমাণগত রসায়ন - সৃজনশীল" },
+        { chapter: "Chapter 3: পরিমাণগত রসায়ন - মূলবই" },
+        { chapter: "Chapter 3: পরিমাণগত রসায়ন - জ্ঞানমূলক" },
+        { chapter: "Chapter 3: পরিমাণগত রসায়ন - অনুধাবনমূলক" },
+        { chapter: "Chapter 3: পরিমাণগত রসায়ন - সৃজনশীল" },
+        { chapter: "Chapter 3: পরিমাণগত রসায়ন - MCQ" },
 
-                { chapter: "Chapter 4: তড়িৎ রসায়ন - মূলবই" },
-                { chapter: "Chapter 4: তড়িৎ রসায়ন - জ্ঞানমূলক" },
-                { chapter: "Chapter 4: তড়িৎ রসায়ন - অনুধাবনমূলক" },
-                { chapter: "Chapter 4: তড়িৎ রসায়ন - সৃজনশীল" }
-            ],
+        { chapter: "Chapter 4: তড়িৎ রসায়ন - মূলবই" },
+        { chapter: "Chapter 4: তড়িৎ রসায়ন - জ্ঞানমূলক" },
+        { chapter: "Chapter 4: তড়িৎ রসায়ন - অনুধাবনমূলক" },
+        { chapter: "Chapter 4: তড়িৎ রসায়ন - সৃজনশীল" },
+        { chapter: "Chapter 4: তড়িৎ রসায়ন - MCQ" }
+    ],
 
-            "Mathematics Second Paper": [
-                { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - মূলবই" },
-                { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - সৃজনশীল" },
+    "Mathematics Second Paper": [
+        { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - মূলবই" },
+        { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - সৃজনশীল" },
+        { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - MCQ" },
 
-                { chapter: "Chapter 3: জটিল সংখ্যা - মূলবই" },
-                { chapter: "Chapter 3: জটিল সংখ্যা - সৃজনশীল" },
+        { chapter: "Chapter 3: জটিল সংখ্যা - মূলবই" },
+        { chapter: "Chapter 3: জটিল সংখ্যা - সৃজনশীল" },
+        { chapter: "Chapter 3: জটিল সংখ্যা - MCQ" },
 
-                { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - মূলবই" },
-                { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - সৃজনশীল" },
+        { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - মূলবই" },
+        { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - সৃজনশীল" },
+        { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - MCQ" },
 
-                { chapter: "Chapter 6: কনিক - মূলবই" },
-                { chapter: "Chapter 6: কনিক - সৃজনশীল" },
+        { chapter: "Chapter 6: কনিক - মূলবই" },
+        { chapter: "Chapter 6: কনিক - সৃজনশীল" },
+        { chapter: "Chapter 6: কনিক - MCQ" },
 
-                { chapter: "Chapter 7: বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - মূলবই" },
-                { chapter: "Chapter 7: বিপরীত ত্রিকোণमিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - সৃজনশীল" },
+        { chapter: "Chapter 7: বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - মূলবই" },
+        { chapter: "Chapter 7: বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - সৃজনশীল" },
+        { chapter: "Chapter 7: বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - MCQ" },
 
-                { chapter: "Chapter 8: স্থিতিবিদ্যা - মূলবই" },
-                { chapter: "Chapter 8: স্থিতিবিদ্যা - সৃজনশীল" }
-            ],
+        { chapter: "Chapter 8: স্থিতিবিদ্যা - মূলবই" },
+        { chapter: "Chapter 8: স্থিতিবিদ্যা - সৃজনশীল" },
+        { chapter: "Chapter 8: স্থিতিবিদ্যা - MCQ" }
+    ],
 
-            "Biology First Paper": [
-                { chapter: "Chapter 2: কোষ বিভাজন - মূলবই" },
-                { chapter: "Chapter 2: কোষ বিভাজন - জ্ঞানমূলক" },
-                { chapter: "Chapter 2: কোষ বিভাজন - অনুধাবনমূলক" },
-                { chapter: "Chapter 2: কোষ বিভাজন - সৃজনশীল" },
+    "Biology First Paper": [
+        { chapter: "Chapter 2: কোষ বিভাজন - মূলবই" },
+        { chapter: "Chapter 2: কোষ বিভাজন - জ্ঞানমূলক" },
+        { chapter: "Chapter 2: কোষ বিভাজন - অনুধাবনমূলক" },
+        { chapter: "Chapter 2: কোষ বিভাজন - সৃজনশীল" },
+        { chapter: "Chapter 2: কোষ বিভাজন - MCQ" },
 
-                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - মূলবই" },
-                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - জ্ঞানমূলক" },
-                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - অনুধাবনমূলক" },
-                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - সৃজনশীল" },
+        { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - মূলবই" },
+        { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - জ্ঞানমূলক" },
+        { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - অনুধাবনমূলক" },
+        { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - সৃজনশীল" },
+        { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - MCQ" },
 
-                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - মূলবই" },
-                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - জ্ঞানমূলক" },
-                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - অনুধাবনমূলক" },
-                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - সৃজনশীল" },
+        { chapter: "Chapter 10: উদ্ভিদ প্রজনন - মূলবই" },
+        { chapter: "Chapter 10: উদ্ভিদ প্রজনন - জ্ঞানমূলক" },
+        { chapter: "Chapter 10: উদ্ভিদ প্রজনন - অনুধাবনমূলক" },
+        { chapter: "Chapter 10: উদ্ভিদ প্রজনন - সৃজনশীল" },
+        { chapter: "Chapter 10: উদ্ভিদ প্রজনন - MCQ" },
 
-                { chapter: "Chapter 11: জীবপ্রযুক্তি - মূলবই" },
-                { chapter: "Chapter 11: জীবপ্রযুক্তি - জ্ঞানমূলক" },
-                { chapter: "Chapter 11: জীবপ্রযুক্তি - অনুধাবনমূলক" },
-                { chapter: "Chapter 11: জীবপ্রযুক্তি - সৃজনশীল" },
+        { chapter: "Chapter 11: জীবপ্রযুক্তি - মূলবই" },
+        { chapter: "Chapter 11: জীবপ্রযুক্তি - জ্ঞানমূলক" },
+        { chapter: "Chapter 11: জীবপ্রযুক্তি - অনুধাবনমূলক" },
+        { chapter: "Chapter 11: জীবপ্রযুক্তি - সৃজনশীল" },
+        { chapter: "Chapter 11: জীবপ্রযুক্তি - MCQ" },
 
-                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - মূলবই" },
-                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - জ্ঞানমূলক" },
-                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তار ও সংরক্ষণ - অনুধাবনমূলক" },
-                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - সৃজনশীল" }
-            ],
+        { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - মূলবই" },
+        { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - জ্ঞানমূলক" },
+        { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - অনুধাবনমূলক" },
+        { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - সৃজনশীল" },
+        { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - MCQ" }
+    ],
 
-            "Biology Second Paper": [
-                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - মূলবই" },
-                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - জ্ঞানমূলক" },
-                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - অনুধাবনমূলক" },
-                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - সৃজনশীল" },
+    "Biology Second Paper": [
+        { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - মূলবই" },
+        { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - জ্ঞানমূলক" },
+        { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - অনুধাবনমূলক" },
+        { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - সৃজনশীল" },
+        { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - MCQ" },
 
-                { chapter: "Chapter 3: পরিপাক ও শোষণ - মূলবই" },
-                { chapter: "Chapter 3: পরিপাক ও শোষণ - জ্ঞানমূলক" },
-                { chapter: "Chapter 3: পরিপাক ও শোষণ - অনুধাবনমূলক" },
-                { chapter: "Chapter 3: পরিপাক ও শোষণ - সৃজনশীল" },
+        { chapter: "Chapter 3: পরিপাক ও শোষণ - মূলবই" },
+        { chapter: "Chapter 3: পরিপাক ও শোষণ - জ্ঞানমূলক" },
+        { chapter: "Chapter 3: পরিপাক ও শোষণ - অনুধাবনমূলক" },
+        { chapter: "Chapter 3: পরিপাক ও শোষণ - সৃজনশীল" },
+        { chapter: "Chapter 3: পরিপাক ও শোষণ - MCQ" },
 
-                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - মূলবই" },
-                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - জ্ঞানমূলক" },
-                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - অনুধাবনমূলক" },
-                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - সৃজনশীল" },
+        { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - মূলবই" },
+        { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - জ্ঞানমূলক" },
+        { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - অনুধাবনমূলক" },
+        { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - সৃজনশীল" },
+        { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - MCQ" },
 
-                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - মূলবই" },
-                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - জ্ঞানমূলক" },
-                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - অনুধাবনমূলক" },
-                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - সৃজনশীল" },
+        { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - মূলবই" },
+        { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - জ্ঞানমূলক" },
+        { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - অনুধাবনমূলক" },
+        { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - সৃজনশীল" },
+        { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - MCQ" },
 
-                { chapter: "Chapter 12: প্রাণীর আচরণ - মূলবই" },
-                { chapter: "Chapter 12: প্রাণীর আচরণ - জ্ঞানমূলক" },
-                { chapter: "Chapter 12: প্রাণীর আচরণ - অনুধাবনমূলক" },
-                { chapter: "Chapter 12: প্রাণীর আচরণ - সৃজনশীল" }
-            ],
+        { chapter: "Chapter 12: প্রাণীর আচরণ - মূলবই" },
+        { chapter: "Chapter 12: প্রাণীর আচরণ - জ্ঞানমূলক" },
+        { chapter: "Chapter 12: প্রাণীর আচরণ - অনুধাবনমূলক" },
+        { chapter: "Chapter 12: প্রাণীর আচরণ - সৃজনশীল" },
+        { chapter: "Chapter 12: প্রাণীর আচরণ - MCQ" }
+    ],
 
-            "English Second Paper": [
-                { chapter: "Chapter 1: Articles - Concept" },
-                { chapter: "Chapter 1: Articles - Question Practice" },
+    "English Second Paper": [
+        { chapter: "Chapter 1: Articles - Concept" },
+        { chapter: "Chapter 1: Articles - Question Practice" },
 
-                { chapter: "Chapter 2: Prepositions - Concept" },
-                { chapter: "Chapter 2: Prepositions - Question Practice" },
+        { chapter: "Chapter 2: Prepositions - Concept" },
+        { chapter: "Chapter 2: Prepositions - Question Practice" },
 
-                { chapter: "Chapter 3: Special Use of Some Phrases/Words - Concept" },
-                { chapter: "Chapter 3: Special Use of Some Phrases/Words - Question Practice" },
+        { chapter: "Chapter 3: Special Use of Some Phrases/Words - Concept" },
+        { chapter: "Chapter 3: Special Use of Some Phrases/Words - Question Practice" },
 
-                { chapter: "Chapter 4: Clauses and Phrases - Concept" },
-                { chapter: "Chapter 4: Clauses and Phrases - Question Practice" },
+        { chapter: "Chapter 4: Clauses and Phrases - Concept" },
+        { chapter: "Chapter 4: Clauses and Phrases - Question Practice" },
 
-                { chapter: "Chapter 5: Right Form of Verbs - Concept" },
-                { chapter: "Chapter 5: Right Form of Verbs - Question Practice" },
+        { chapter: "Chapter 5: Right Form of Verbs - Concept" },
+        { chapter: "Chapter 5: Right Form of Verbs - Question Practice" },
 
-                { chapter: "Chapter 6: Changing Sentences - Concept" },
-                { chapter: "Chapter 6: Changing Sentences - Question Practice" },
+        { chapter: "Chapter 6: Changing Sentences - Concept" },
+        { chapter: "Chapter 6: Changing Sentences - Question Practice" },
 
-                { chapter: "Chapter 7: Narration - Concept" },
-                { chapter: "Chapter 7: Narration - Question Practice" },
+        { chapter: "Chapter 7: Narration - Concept" },
+        { chapter: "Chapter 7: Narration - Question Practice" },
 
-                { chapter: "Chapter 8: Pronoun Referencing - Concept" },
-                { chapter: "Chapter 8: Pronoun Referencing - Question Practice" },
+        { chapter: "Chapter 8: Pronoun Referencing - Concept" },
+        { chapter: "Chapter 8: Pronoun Referencing - Question Practice" },
 
-                { chapter: "Chapter 9: Modifiers - Concept" },
-                { chapter: "Chapter 9: Modifiers - Question Practice" },
+        { chapter: "Chapter 9: Modifiers - Concept" },
+        { chapter: "Chapter 9: Modifiers - Question Practice" },
 
-                { chapter: "Chapter 10: Sentence Connectors - Concept" },
-                { chapter: "Chapter 10: Sentence Connectors - Question Practice" },
+        { chapter: "Chapter 10: Sentence Connectors - Concept" },
+        { chapter: "Chapter 10: Sentence Connectors - Question Practice" },
 
-                { chapter: "Chapter 11: Synonyms and Antonyms - Concept" },
-                { chapter: "Chapter 11: Synonyms and Antonyms - Question Practice" },
+        { chapter: "Chapter 11: Synonyms and Antonyms - Concept" },
+        { chapter: "Chapter 11: Synonyms and Antonyms - Question Practice" },
 
-                { chapter: "Chapter 12: Punctuation - Concept" },
-                { chapter: "Chapter 12: Punctuation - Question Practice" },
+        { chapter: "Chapter 12: Punctuation - Concept" },
+        { chapter: "Chapter 12: Punctuation - Question Practice" },
 
-                { chapter: "Chapter 13: Writing Part - Concept" },
-                { chapter: "Chapter 13: Writing Part - Question Practice" }
-            ],
+        { chapter: "Chapter 13: Writing Part - Concept" },
+        { chapter: "Chapter 13: Writing Part - Question Practice" }
+    ],
 
-            "Bengali Second Paper": [
-                { chapter: "Chapter 1: উচ্চারণ - Concept" },
-                { chapter: "Chapter 1: উচ্চারণ - Question Practice" },
+    "Bengali Second Paper": [
+        { chapter: "Chapter 1: উচ্চারণ - Concept" },
+        { chapter: "Chapter 1: উচ্চারণ - Question Practice" },
 
-                { chapter: "Chapter 2: বানান - Concept" },
-                { chapter: "Chapter 2: বানান - Question Practice" },
+        { chapter: "Chapter 2: বানান - Concept" },
+        { chapter: "Chapter 2: বানান - Question Practice" },
 
-                { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি - Concept" },
-                { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি - Question Practice" },
+        { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি - Concept" },
+        { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি - Question Practice" },
 
-                { chapter: "Chapter 4: সমাস - Concept" },
-                { chapter: "Chapter 4: সমাস - Question Practice" },
+        { chapter: "Chapter 4: সমাস - Concept" },
+        { chapter: "Chapter 4: সমাস - Question Practice" },
 
-                { chapter: "Chapter 5: বাক্যতত্ত্ব - Concept" },
-                { chapter: "Chapter 5: বাক্যতত্ত্ব - Question Practice" },
+        { chapter: "Chapter 5: বাক্যতত্ত্ব - Concept" },
+        { chapter: "Chapter 5: বাক্যতত্ত্ব - Question Practice" },
 
-                { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ - Concept" },
-                { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ - Question Practice" },
+        { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ - Concept" },
+        { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ - Question Practice" },
 
-                { chapter: "Chapter 7: পারিভাষিক শব্দ - Concept" },
-                { chapter: "Chapter 7: পারিভাষিক শব্দ - Question Practice" },
+        { chapter: "Chapter 7: পারিভাষিক শব্দ - Concept" },
+        { chapter: "Chapter 7: পারিভাষিক শব্দ - Question Practice" },
 
-                { chapter: "Chapter 8: নির্মিতি - Concept" },
-                { chapter: "Chapter 8: নির্মিতি - Question Practice" }
-            ],
+        { chapter: "Chapter 8: নির্মিতি - Concept" },
+        { chapter: "Chapter 8: নির্মিতি - Question Practice" }
+    ],
 
-            "Information and Communication Technology": [
-                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - মূলবই" },
-                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - জ্ঞানমূলক" },
-                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - অনুধাবনমূলক" },
-                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - সৃজনশীল" },
+    "Information and Communication Technology": [
+        { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - মূলবই" },
+        { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - জ্ঞানমূলক" },
+        { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - অনুধাবনমূলক" },
+        { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - সৃজনশীল" },
+        { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - MCQ" },
 
-                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - মূলবই" },
-                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - জ্ঞানমূলক" },
-                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - অনুধাবনমূলক" },
-                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - সৃজনশীল" },
+        { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - মূলবই" },
+        { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - জ্ঞানমূলক" },
+        { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - অনুধাবনমূলক" },
+        { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - সৃজনশীল" },
+        { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - MCQ" },
 
-                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - মূলবই" },
-                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - জ্ঞানমূলক" },
-                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - অনুধাবনমূলক" },
-                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - সৃজনশীল" },
+        { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - মূলবই" },
+        { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - জ্ঞানমূলক" },
+        { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - অনুধাবনমূলক" },
+        { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - সৃজনশীল" },
+        { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - MCQ" },
 
-                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - মূলবই" },
-                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - জ্ঞানমূলক" },
-                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - অনুধাবনমূলক" },
-                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - সৃজনশীল" },
+        { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - মূলবই" },
+        { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - জ্ঞানমূলক" },
+        { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - অনুধাবনমূলক" },
+        { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - সৃজনশীল" },
+        { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - MCQ" },
 
-                { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - মূলবই" },
-                { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - জ্ঞানমূলক" },
-                { chapter: "Chapter 5: प्रोग্রামিং ভাষা - অনুধাবনমূলক" },
-                { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - সৃজনশীল" },
+        { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - মূলবই" },
+        { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - জ্ঞানমূলক" },
+        { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - অনুধাবনমূলক" },
+        { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - সৃজনশীল" },
+        { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - MCQ" },
 
-                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - মূলবই" },
-                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - জ্ঞানমূলক" },
-                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - অনুধাবনমূলক" },
-                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - সৃজনশীল" }
-            ]
-        };
+        { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - মূলবই" },
+        { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - জ্ঞানমূলক" },
+        { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - অনুধাবনমূলক" },
+        { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - সৃজনশীল" },
+        { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - MCQ" }
+    ]
+};
 
         // ---------- Robust storage helpers ----------
         function loadCompletedChapters() {
