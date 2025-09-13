@@ -5,295 +5,294 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syllabus Tracker | Exam Preparation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1527/1527666.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1527/1527666.png" type="image/png">
 
-<style>
-    :root {
-        --primary: #4361ee;
-        --secondary: #3a0ca3;
-        --success: #4cc9f0;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --gray: #6c757d;
-        --border: #dee2e6;
-        --sidebar-width: 250px;
-        --header-height: 60px;
-        --transition-speed: 0.3s;
-    }
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --border: #dee2e6;
+            --sidebar-width: 250px;
+            --header-height: 60px;
+            --transition-speed: 0.3s;
+        }
 
-    * { 
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box; 
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        transition: all var(--transition-speed) ease-in-out;
-    }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            transition: all var(--transition-speed) ease-in-out;
+        }
 
-    body { 
-        background-color: #f5f7fb; 
-        color: var(--dark); 
-        display: flex; 
-        min-height: 100vh; 
-    }
+        body { 
+            background-color: #f5f7fb; 
+            color: var(--dark); 
+            display: flex; 
+            min-height: 100vh; 
+        }
 
-    /* Bangla font override */
-    body:lang(bn), .bangla { 
-        font-family: 'Hind Siliguri', sans-serif !important;
-    }
+        /* Bangla font override */
+        body:lang(bn), .bangla { 
+            font-family: 'Hind Siliguri', sans-serif !important;
+        }
 
-    /* Sidebar */
-    .sidebar { 
-        width: var(--sidebar-width); 
-        background: linear-gradient(to bottom, var(--primary), var(--secondary)); 
-        color: white; 
-        height: 100vh; 
-        position: fixed; 
-        overflow-y: auto; 
-        padding: 20px 0; 
-        box-shadow: 0 0 15px rgba(0,0,0,0.1); 
-        z-index: 1000;
-        transition: width var(--transition-speed) ease;
-    }
+        /* Sidebar */
+        .sidebar { 
+            width: var(--sidebar-width); 
+            background: linear-gradient(to bottom, var(--primary), var(--secondary)); 
+            color: white; 
+            height: 100vh; 
+            position: fixed; 
+            overflow-y: auto; 
+            padding: 20px 0; 
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); 
+            z-index: 1000;
+            transition: width var(--transition-speed) ease;
+        }
 
-    .sidebar-header { 
-        padding: 0 20px 20px; 
-        border-bottom: 1px solid rgba(255,255,255,0.1); 
-        margin-bottom: 20px; 
-    }
+        .sidebar-header { 
+            padding: 0 20px 20px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            margin-bottom: 20px; 
+        }
 
-    .sidebar-header h2 { 
-        font-size: 1.5rem; 
-        display:flex; 
-        align-items:center; 
-        gap:10px; 
-        animation: fadeInDown 0.6s ease;
-    }
+        .sidebar-header h2 { 
+            font-size: 1.5rem; 
+            display:flex; 
+            align-items:center; 
+            gap:10px; 
+            animation: fadeInDown 0.6s ease;
+        }
 
-    .sidebar-menu { list-style: none; }
-    .sidebar-menu li { margin-bottom: 5px; }
-    .sidebar-menu a { 
-        display:flex; 
-        align-items:center; 
-        padding:12px 20px; 
-        color:white; 
-        text-decoration:none; 
-        transition: background-color var(--transition-speed), border-left var(--transition-speed); 
-        border-left: 4px solid transparent; 
-    }
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin-bottom: 5px; }
+        .sidebar-menu a { 
+            display:flex; 
+            align-items:center; 
+            padding:12px 20px; 
+            color:white; 
+            text-decoration:none; 
+            transition: background-color var(--transition-speed), border-left var(--transition-speed); 
+            border-left: 4px solid transparent; 
+        }
 
-    .sidebar-menu a:hover, 
-    .sidebar-menu a.active { 
-        background-color: rgba(255,255,255,0.1); 
-        border-left: 4px solid var(--success); 
-        transform: translateX(4px);
-    }
+        .sidebar-menu a:hover, 
+        .sidebar-menu a.active { 
+            background-color: rgba(255,255,255,0.1); 
+            border-left: 4px solid var(--success); 
+            transform: translateX(4px);
+        }
 
-    .sidebar-menu i { 
-        margin-right: 10px; 
-        font-size:1.2rem; 
-        width:24px; 
-        text-align:center; 
-        transition: transform var(--transition-speed);
-    }
+        .sidebar-menu i { 
+            margin-right: 10px; 
+            font-size:1.2rem; 
+            width:24px; 
+            text-align:center; 
+            transition: transform var(--transition-speed);
+        }
 
-    .sidebar-menu a:hover i { transform: rotate(10deg) scale(1.1); }
+        .sidebar-menu a:hover i { transform: rotate(10deg) scale(1.1); }
 
-    /* Main Content */
-    .main-content { 
-        flex:1; 
-        margin-left: var(--sidebar-width); 
-        padding:30px; 
-        transition: margin-left var(--transition-speed); 
-    }
+        /* Main Content */
+        .main-content { 
+            flex:1; 
+            margin-left: var(--sidebar-width); 
+            padding:30px; 
+            transition: margin-left var(--transition-speed); 
+        }
 
-    .page-header { 
-        margin-bottom:30px; 
-        padding-bottom:15px; 
-        border-bottom:1px solid var(--border); 
-    }
+        .page-header { 
+            margin-bottom:30px; 
+            padding-bottom:15px; 
+            border-bottom:1px solid var(--border); 
+        }
 
-    .page-header h1 { 
-        font-size:1.8rem; 
-        color:var(--primary); 
-        animation: fadeInUp 0.6s ease;
-    }
+        .page-header h1 { 
+            font-size:1.8rem; 
+            color:var(--primary); 
+            animation: fadeInUp 0.6s ease;
+        }
 
-    /* Cards */
-    .card { 
-        background:white; 
-        border-radius:10px; 
-        box-shadow:0 5px 15px rgba(0,0,0,0.05); 
-        margin-bottom:25px; 
-        overflow:hidden; 
-        transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    }
+        /* Cards */
+        .card { 
+            background:white; 
+            border-radius:10px; 
+            box-shadow:0 5px 15px rgba(0,0,0,0.05); 
+            margin-bottom:25px; 
+            overflow:hidden; 
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
 
-    .card:hover { 
-        transform: translateY(-5px); 
-        box-shadow:0 10px 25px rgba(0,0,0,0.1); 
-    }
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow:0 10px 25px rgba(0,0,0,0.1); 
+        }
 
-    .card-header { 
-        padding:15px 20px; 
-        background-color: rgba(67,97,238,0.05); 
-        border-bottom:1px solid var(--border); 
-        font-weight:600; 
-        color:var(--primary); 
-        display:flex; 
-        align-items:center; 
-        justify-content:space-between; 
-    }
+        .card-header { 
+            padding:15px 20px; 
+            background-color: rgba(67,97,238,0.05); 
+            border-bottom:1px solid var(--border); 
+            font-weight:600; 
+            color:var(--primary); 
+            display:flex; 
+            align-items:center; 
+            justify-content:space-between; 
+        }
 
-    .card-body { padding:20px; }
+        .card-body { padding:20px; }
 
-    /* Progress */
-    .progress-container { 
-        display:grid; 
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-        gap:20px; 
-    }
+        /* Progress */
+        .progress-container { 
+            display:grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap:20px; 
+        }
 
-    .subject-progress { 
-        padding:15px; 
-        border-radius:8px; 
-        background:white; 
-        box-shadow:0 3px 10px rgba(0,0,0,0.05); 
-        transition: transform var(--transition-speed);
-    }
+        .subject-progress { 
+            padding:15px; 
+            border-radius:8px; 
+            background:white; 
+            box-shadow:0 3px 10px rgba(0,0,0,0.05); 
+            transition: transform var(--transition-speed);
+        }
 
-    .subject-progress:hover { transform: scale(1.02); }
+        .subject-progress:hover { transform: scale(1.02); }
 
-    .subject-title { 
-        display:flex; 
-        justify-content:space-between; 
-        margin-bottom:10px; 
-        font-weight:600; 
-        color:var(--dark); 
-    }
+        .subject-title { 
+            display:flex; 
+            justify-content:space-between; 
+            margin-bottom:10px; 
+            font-weight:600; 
+            color:var(--dark); 
+        }
 
-    .progress-bar { 
-        height:10px; 
-        background-color:#e9ecef; 
-        border-radius:5px; 
-        overflow:hidden; 
-        margin-bottom:5px; 
-    }
+        .progress-bar { 
+            height:10px; 
+            background-color:#e9ecef; 
+            border-radius:5px; 
+            overflow:hidden; 
+            margin-bottom:5px; 
+        }
 
-    .progress-fill { 
-        height:100%; 
-        background-color:var(--success); 
-        border-radius:5px; 
-        transition: width 0.6s ease-in-out; 
-    }
+        .progress-fill { 
+            height:100%; 
+            background-color:var(--success); 
+            border-radius:5px; 
+            transition: width 0.6s ease-in-out; 
+        }
 
-    .progress-text { 
-        font-size:0.85rem; 
-        color:var(--gray); 
-        text-align:right; 
-    }
+        .progress-text { 
+            font-size:0.85rem; 
+            color:var(--gray); 
+            text-align:right; 
+        }
 
-    /* Chapter List */
-    .chapters-list { list-style:none; }
-    .chapter-item { 
-        padding:12px 15px; 
-        border-bottom:1px solid var(--border); 
-        display:flex; 
-        justify-content:space-between; 
-        align-items:center; 
-        transition: background-color var(--transition-speed);
-    }
+        /* Chapter List */
+        .chapters-list { list-style:none; }
+        .chapter-item { 
+            padding:12px 15px; 
+            border-bottom:1px solid var(--border); 
+            display:flex; 
+            justify-content:space-between; 
+            align-items:center; 
+            transition: background-color var(--transition-speed);
+        }
 
-    .chapter-item:hover { background-color: rgba(67,97,238,0.05); }
-    .chapter-item:last-child { border-bottom:none; }
+        .chapter-item:hover { background-color: rgba(67,97,238,0.05); }
+        .chapter-item:last-child { border-bottom:none; }
 
-    .mark-btn { 
-        background-color:var(--primary); 
-        color:white; 
-        border:none; 
-        padding:6px 12px; 
-        border-radius:4px; 
-        cursor:pointer; 
-        font-size:0.85rem; 
-        transition: background-color var(--transition-speed), transform var(--transition-speed); 
-    }
+        .mark-btn { 
+            background-color:var(--primary); 
+            color:white; 
+            border:none; 
+            padding:6px 12px; 
+            border-radius:4px; 
+            cursor:pointer; 
+            font-size:0.85rem; 
+            transition: background-color var(--transition-speed), transform var(--transition-speed); 
+        }
 
-    .mark-btn:hover { 
-        background-color:var(--secondary); 
-        transform: scale(1.05); 
-    }
+        .mark-btn:hover { 
+            background-color:var(--secondary); 
+            transform: scale(1.05); 
+        }
 
-    .completed-badge { 
-        background-color:var(--success); 
-        color:white; 
-        padding:4px 8px; 
-        border-radius:4px; 
-        font-size:0.75rem; 
-        font-weight:500; 
-        animation: fadeIn 0.4s ease; 
-    }
+        .completed-badge { 
+            background-color:var(--success); 
+            color:white; 
+            padding:4px 8px; 
+            border-radius:4px; 
+            font-size:0.75rem; 
+            font-weight:500; 
+            animation: fadeIn 0.4s ease; 
+        }
 
-    /* Modal */
-    .modal { 
-        display:none; 
-        position:fixed; 
-        top:0; 
-        left:0; 
-        width:100%; 
-        height:100%; 
-        background-color: rgba(0,0,0,0.5); 
-        z-index:2000; 
-        align-items:center; 
-        justify-content:center; 
-        animation: fadeIn 0.3s ease; 
-    }
+        /* Modal */
+        .modal { 
+            display:none; 
+            position:fixed; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            background-color: rgba(0,0,0,0.5); 
+            z-index:2000; 
+            align-items:center; 
+            justify-content:center; 
+            animation: fadeIn 0.3s ease; 
+        }
 
-    .modal-content { 
-        background-color:white; 
-        padding:25px; 
-        border-radius:10px; 
-        width:90%; 
-        max-width:400px; 
-        box-shadow:0 5px 20px rgba(0,0,0,0.15); 
-        animation: scaleUp 0.3s ease; 
-    }
+        .modal-content { 
+            background-color:white; 
+            padding:25px; 
+            border-radius:10px; 
+            width:90%; 
+            max-width:400px; 
+            box-shadow:0 5px 20px rgba(0,0,0,0.15); 
+            animation: scaleUp 0.3s ease; 
+        }
 
-    .modal-header { margin-bottom:15px; color:var(--primary); font-size:1.2rem; }
-    .modal-body { margin-bottom:20px; color:var(--dark); }
-    .modal-footer { display:flex; justify-content:flex-end; gap:10px; }
+        .modal-header { margin-bottom:15px; color:var(--primary); font-size:1.2rem; }
+        .modal-body { margin-bottom:20px; color:var(--dark); }
+        .modal-footer { display:flex; justify-content:flex-end; gap:10px; }
 
-    .modal-btn { 
-        padding:8px 16px; 
-        border-radius:4px; 
-        cursor:pointer; 
-        font-weight:500; 
-        border:none; 
-        transition: transform var(--transition-speed); 
-    }
+        .modal-btn { 
+            padding:8px 16px; 
+            border-radius:4px; 
+            cursor:pointer; 
+            font-weight:500; 
+            border:none; 
+            transition: transform var(--transition-speed); 
+        }
 
-    .modal-btn:hover { transform: translateY(-2px); }
-    .btn-confirm { background-color:var(--success); color:white; }
-    .btn-cancel { background-color:#f8f9fa; color:var(--gray); border:1px solid var(--border); }
+        .modal-btn:hover { transform: translateY(-2px); }
+        .btn-confirm { background-color:var(--success); color:white; }
+        .btn-cancel { background-color:#f8f9fa; color:var(--gray); border:1px solid var(--border); }
 
-    /* Animations */
-    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-    @keyframes fadeInUp { from { opacity:0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
-    @keyframes fadeInDown { from { opacity:0; transform: translateY(-20px);} to { opacity:1; transform: translateY(0);} }
-    @keyframes scaleUp { from { transform: scale(0.9);} to { transform: scale(1);} }
+        /* Animations */
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes fadeInUp { from { opacity:0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
+        @keyframes fadeInDown { from { opacity:0; transform: translateY(-20px);} to { opacity:1; transform: translateY(0);} }
+        @keyframes scaleUp { from { transform: scale(0.9);} to { transform: scale(1);} }
 
-    /* Responsive */
-    @media (max-width: 992px) { 
-        .sidebar { width:70px; } 
-        .sidebar-header h2 span, .sidebar-menu a span { display:none; } 
-        .sidebar-menu i { margin-right:0; font-size:1.4rem; } 
-        .main-content { margin-left:70px; } 
-    }
-    @media (max-width:768px) { 
-        .progress-container { grid-template-columns: 1fr; } 
-        .main-content { padding:20px; } 
-    }
-</style>
-
+        /* Responsive */
+        @media (max-width: 992px) { 
+            .sidebar { width:70px; } 
+            .sidebar-header h2 span, .sidebar-menu a span { display:none; } 
+            .sidebar-menu i { margin-right:0; font-size:1.4rem; } 
+            .main-content { margin-left:70px; } 
+        }
+        @media (max-width:768px) { 
+            .progress-container { grid-template-columns: 1fr; } 
+            .main-content { padding:20px; } 
+        }
+    </style>
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -333,7 +332,7 @@
         <!-- Completed Page -->
         <div id="completed-page" class="page" style="display: none;">
             <div class="page-header">
-                <h1>Completed Chapters</h1>
+                <h1>Completed Tasks</h1>
             </div>
             <div class="completed-container">
                 <!-- Completed content will be generated here -->
@@ -357,293 +356,507 @@
         </div>
     </div>
 
-<script>
-// ---------- Data ----------
-const syllabusData = {
-    "Physics Second Paper": [
-        { chapter: "Chapter 1: তাপগতিবিদ্যা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 2: স্থির তড়িৎ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: চল তড়িৎ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "Chemistry Second Paper": [
-        { chapter: "Chapter 1: পরিবেশ রসায়ন", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 2: জৈব যৌগ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: পরিমাণগত রসায়ন", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 4: তড়িৎ রসায়ন", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "Mathematics Second Paper": [
-        { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: জটিল সংখ্যা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 6: কনিক", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 7: বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 8: স্থিতিবিদ্যা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "Biology First Paper": [
-        { chapter: "Chapter 2: কোষ বিভাজন", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 10: উদ্ভিদ প্রজনন", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 11: জীবপ্রযুক্তি", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "Biology Second Paper": [
-        { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং)", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: পরিপাক ও শোষণ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 12: প্রাণীর আচরণ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "English Second Paper": [
-        { chapter: "Chapter 1: Articles", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 2: Prepositions", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: Special Use of Some Phrases/Words", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 4: Clauses and Phrases", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 5: Right Form of Verbs", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 6: Changing Sentences", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 7: Narration", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 8: Pronoun Referencing", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 9: Modifiers", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 10: Sentence Connectors", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 11: Synonyms and Antonyms", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 12: Punctuation", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 13: Writing Part", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "Bengali Second Paper": [
-        { chapter: "Chapter 1: উচ্চারণ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 2: বানান", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 4: সমাস", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 5: বাক্যতত্ত্ব", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 7: পারিভাষিক শব্দ", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 8: নির্মিতি", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ],
-    "Information and Communication Technology": [
-        { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 5: প্রোগ্রামিং ভাষা", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] },
-        { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম", parts: ["মূলবই","জ্ঞানমূলক","অনুধাবনমূলক","সৃজনশীল"] }
-    ]
-};
+    <script>
+        // ---------- Data ----------
+        const syllabusData = {
+            "Physics Second Paper": [
+                { chapter: "Chapter 1: তাপগতিবিদ্যা - মূলবই" },
+                { chapter: "Chapter 1: তাপগতিবিদ্যা - জ্ঞানমূলক" },
+                { chapter: "Chapter 1: তাপগতিবিদ্যা - অনুধাবনমূলক" },
+                { chapter: "Chapter 1: তাপগতিবিদ্যা - সৃজনশীল" },
 
+                { chapter: "Chapter 2: স্থির তড়িৎ - মূলবই" },
+                { chapter: "Chapter 2: স্থির তড়িৎ - জ্ঞানমূলক" },
+                { chapter: "Chapter 2: স্থির তড়িৎ - অনুধাবনমূলক" },
+                { chapter: "Chapter 2: স্থির তড়িৎ - সৃজনশীল" },
 
-// ---------- Storage Helpers ----------
-function loadCompletedChapters() {
-    try {
-        const raw = localStorage.getItem('completedChapters');
-        return raw ? JSON.parse(raw) : {};
-    } catch (err) {
-        console.warn("Could not parse saved progress", err);
-        return {};
-    }
-}
-function saveCompletedChapters() {
-    localStorage.setItem('completedChapters', JSON.stringify(completedChapters));
-}
-let completedChapters = loadCompletedChapters();
+                { chapter: "Chapter 3: চল তড়িৎ - মূলবই" },
+                { chapter: "Chapter 3: চল তড়িৎ - জ্ঞানমূলক" },
+                { chapter: "Chapter 3: চল তড়িৎ - অনুধাবনমূলক" },
+                { chapter: "Chapter 3: চল তড়িৎ - সৃজনশীল" },
 
-// ---------- Initialization ----------
-document.addEventListener("DOMContentLoaded", () => {
-    initializeNavigation();
-    renderHomePage();
-    renderSyllabusPage();
-    renderCompletedPage();
-    setupModal();
-    attachSyllabusDelegation();
-});
+                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - মূলবই" },
+                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - জ্ঞানমূলক" },
+                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - অনুধাবনমূলক" },
+                { chapter: "Chapter 7: ভৌত আলোকবিজ্ঞান - সৃজনশীল" },
 
-// ---------- Navigation ----------
-function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.sidebar-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const page = this.dataset.page;
-            navLinks.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
+                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - মূলবই" },
+                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - জ্ঞানমূলক" },
+                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - অনুধাবনমূলক" },
+                { chapter: "Chapter 8: আধুনিক পদার্থবিজ্ঞানের সূচনা - সৃজনশীল" },
 
-            document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-            document.getElementById(`${page}-page`).style.display = "block";
+                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - মূলবই" },
+                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - জ্ঞানমূলক" },
+                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - অনুধাবনমূলক" },
+                { chapter: "Chapter 11: জ্যোতির্বিজ্ঞান - সৃজনশীল" }
+            ],
 
-            if (page === "home") renderHomePage();
-            if (page === "syllabus") renderSyllabusPage();
-            if (page === "completed") renderCompletedPage();
-        });
-    });
-}
+            "Chemistry Second Paper": [
+                { chapter: "Chapter 1: পরিবেশ রসায়ন - মূলবই" },
+                { chapter: "Chapter 1: পরিবেশ রসায়ন - জ্ঞানমূলক" },
+                { chapter: "Chapter 1: পরিবেশ রসায়ন - অনুধাবনমূলক" },
+                { chapter: "Chapter 1: পরিবেশ রসায়ন - সৃজনশীল" },
 
-// ---------- Rendering ----------
-function renderHomePage() {
-    const container = document.querySelector(".progress-container");
-    container.innerHTML = "";
+                { chapter: "Chapter 2: জৈব যৌগ - মূলবই" },
+                { chapter: "Chapter 2: জৈব যৌগ - জ্ঞানমূলক" },
+                { chapter: "Chapter 2: জৈব যৌগ - অনুধাবনমূলক" },
+                { chapter: "Chapter 2: জৈব যৌগ - সৃজনশীল" },
 
-    for (const subject in syllabusData) {
-        let totalParts = 0, completedCount = 0;
-        syllabusData[subject].forEach(chap => {
-            totalParts += chap.parts.length;
-            if (completedChapters[subject]?.[chap.chapter]) {
-                completedCount += completedChapters[subject][chap.chapter].length;
+                { chapter: "Chapter 3: পরিমাণগত রসায়ন - মূলবই" },
+                { chapter: "Chapter 3: পরিমাণগত রসায়ন - জ্ঞানমূলক" },
+                { chapter: "Chapter 3: পরিমাণগত রসায়ন - অনুধাবনমূলক" },
+                { chapter: "Chapter 3: পরিমাণগত রসায়ন - সৃজনশীল" },
+
+                { chapter: "Chapter 4: তড়িৎ রসায়ন - মূলবই" },
+                { chapter: "Chapter 4: তড়িৎ রসায়ন - জ্ঞানমূলক" },
+                { chapter: "Chapter 4: তড়িৎ রসায়ন - অনুধাবনমূলক" },
+                { chapter: "Chapter 4: তড়িৎ রসায়ন - সৃজনশীল" }
+            ],
+
+            "Mathematics Second Paper": [
+                { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - মূলবই" },
+                { chapter: "Chapter 1: বাস্তব সংখ্যা ও অসমতা - সৃজনশীল" },
+
+                { chapter: "Chapter 3: জটিল সংখ্যা - মূলবই" },
+                { chapter: "Chapter 3: জটিল সংখ্যা - সৃজনশীল" },
+
+                { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - মূলবই" },
+                { chapter: "Chapter 4: বহুপদী ও বহুপদী সমীকরণ - সৃজনশীল" },
+
+                { chapter: "Chapter 6: কনিক - মূলবই" },
+                { chapter: "Chapter 6: কনিক - সৃজনশীল" },
+
+                { chapter: "Chapter 7: বিপরীত ত্রিকোণমিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - মূলবই" },
+                { chapter: "Chapter 7: বিপরীত ত্রিকোণमিতিক ফাংশন ও ত্রিককোনমিতিক সমীকরণ - সৃজনশীল" },
+
+                { chapter: "Chapter 8: স্থিতিবিদ্যা - মূলবই" },
+                { chapter: "Chapter 8: স্থিতিবিদ্যা - সৃজনশীল" }
+            ],
+
+            "Biology First Paper": [
+                { chapter: "Chapter 2: কোষ বিভাজন - মূলবই" },
+                { chapter: "Chapter 2: কোষ বিভাজন - জ্ঞানমূলক" },
+                { chapter: "Chapter 2: কোষ বিভাজন - অনুধাবনমূলক" },
+                { chapter: "Chapter 2: কোষ বিভাজন - সৃজনশীল" },
+
+                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - মূলবই" },
+                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - জ্ঞানমূলক" },
+                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - অনুধাবনমূলক" },
+                { chapter: "Chapter 9: উদ্ভিদ শারীরতত্ত্ব - সৃজনশীল" },
+
+                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - মূলবই" },
+                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - জ্ঞানমূলক" },
+                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - অনুধাবনমূলক" },
+                { chapter: "Chapter 10: উদ্ভিদ প্রজনন - সৃজনশীল" },
+
+                { chapter: "Chapter 11: জীবপ্রযুক্তি - মূলবই" },
+                { chapter: "Chapter 11: জীবপ্রযুক্তি - জ্ঞানমূলক" },
+                { chapter: "Chapter 11: জীবপ্রযুক্তি - অনুধাবনমূলক" },
+                { chapter: "Chapter 11: জীবপ্রযুক্তি - সৃজনশীল" },
+
+                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - মূলবই" },
+                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - জ্ঞানমূলক" },
+                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তار ও সংরক্ষণ - অনুধাবনমূলক" },
+                { chapter: "Chapter 12: জীবের পরিবেশ, বিস্তার ও সংরক্ষণ - সৃজনশীল" }
+            ],
+
+            "Biology Second Paper": [
+                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - মূলবই" },
+                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - জ্ঞানমূলক" },
+                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - অনুধাবনমূলক" },
+                { chapter: "Chapter 2: প্রাণীর পরিচিতি (ঘাসফড়িং) - সৃজনশীল" },
+
+                { chapter: "Chapter 3: পরিপাক ও শোষণ - মূলবই" },
+                { chapter: "Chapter 3: পরিপাক ও শোষণ - জ্ঞানমূলক" },
+                { chapter: "Chapter 3: পরিপাক ও শোষণ - অনুধাবনমূলক" },
+                { chapter: "Chapter 3: পরিপাক ও শোষণ - সৃজনশীল" },
+
+                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - মূলবই" },
+                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - জ্ঞানমূলক" },
+                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - অনুধাবনমূলক" },
+                { chapter: "Chapter 4: রক্ত ও রক্ত সংবহন - সৃজনশীল" },
+
+                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - মূলবই" },
+                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - জ্ঞানমূলক" },
+                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - অনুধাবনমূলক" },
+                { chapter: "Chapter 9: মানবজীবনের ধারাবাহিকতা - সৃজনশীল" },
+
+                { chapter: "Chapter 12: প্রাণীর আচরণ - মূলবই" },
+                { chapter: "Chapter 12: প্রাণীর আচরণ - জ্ঞানমূলক" },
+                { chapter: "Chapter 12: প্রাণীর আচরণ - অনুধাবনমূলক" },
+                { chapter: "Chapter 12: প্রাণীর আচরণ - সৃজনশীল" }
+            ],
+
+            "English Second Paper": [
+                { chapter: "Chapter 1: Articles - Concept" },
+                { chapter: "Chapter 1: Articles - Question Practice" },
+
+                { chapter: "Chapter 2: Prepositions - Concept" },
+                { chapter: "Chapter 2: Prepositions - Question Practice" },
+
+                { chapter: "Chapter 3: Special Use of Some Phrases/Words - Concept" },
+                { chapter: "Chapter 3: Special Use of Some Phrases/Words - Question Practice" },
+
+                { chapter: "Chapter 4: Clauses and Phrases - Concept" },
+                { chapter: "Chapter 4: Clauses and Phrases - Question Practice" },
+
+                { chapter: "Chapter 5: Right Form of Verbs - Concept" },
+                { chapter: "Chapter 5: Right Form of Verbs - Question Practice" },
+
+                { chapter: "Chapter 6: Changing Sentences - Concept" },
+                { chapter: "Chapter 6: Changing Sentences - Question Practice" },
+
+                { chapter: "Chapter 7: Narration - Concept" },
+                { chapter: "Chapter 7: Narration - Question Practice" },
+
+                { chapter: "Chapter 8: Pronoun Referencing - Concept" },
+                { chapter: "Chapter 8: Pronoun Referencing - Question Practice" },
+
+                { chapter: "Chapter 9: Modifiers - Concept" },
+                { chapter: "Chapter 9: Modifiers - Question Practice" },
+
+                { chapter: "Chapter 10: Sentence Connectors - Concept" },
+                { chapter: "Chapter 10: Sentence Connectors - Question Practice" },
+
+                { chapter: "Chapter 11: Synonyms and Antonyms - Concept" },
+                { chapter: "Chapter 11: Synonyms and Antonyms - Question Practice" },
+
+                { chapter: "Chapter 12: Punctuation - Concept" },
+                { chapter: "Chapter 12: Punctuation - Question Practice" },
+
+                { chapter: "Chapter 13: Writing Part - Concept" },
+                { chapter: "Chapter 13: Writing Part - Question Practice" }
+            ],
+
+            "Bengali Second Paper": [
+                { chapter: "Chapter 1: উচ্চারণ - Concept" },
+                { chapter: "Chapter 1: উচ্চারণ - Question Practice" },
+
+                { chapter: "Chapter 2: বানান - Concept" },
+                { chapter: "Chapter 2: বানান - Question Practice" },
+
+                { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি - Concept" },
+                { chapter: "Chapter 3: ব্যাকরণিক শব্দশ্রেণি - Question Practice" },
+
+                { chapter: "Chapter 4: সমাস - Concept" },
+                { chapter: "Chapter 4: সমাস - Question Practice" },
+
+                { chapter: "Chapter 5: বাক্যতত্ত্ব - Concept" },
+                { chapter: "Chapter 5: বাক্যতত্ত্ব - Question Practice" },
+
+                { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ - Concept" },
+                { chapter: "Chapter 6: বাংলা ভাষার অপপ্রয়োগ ও শুদ্ধ প্রয়োগ - Question Practice" },
+
+                { chapter: "Chapter 7: পারিভাষিক শব্দ - Concept" },
+                { chapter: "Chapter 7: পারিভাষিক শব্দ - Question Practice" },
+
+                { chapter: "Chapter 8: নির্মিতি - Concept" },
+                { chapter: "Chapter 8: নির্মিতি - Question Practice" }
+            ],
+
+            "Information and Communication Technology": [
+                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - মূলবই" },
+                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - জ্ঞানমূলক" },
+                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - অনুধাবনমূলক" },
+                { chapter: "Chapter 1: তথ্য ও যোগাযোগ প্রযুক্তি: বিশ্ব ও বাংলাদেশ প্রেক্ষিত - সৃজনশীল" },
+
+                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - মূলবই" },
+                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - জ্ঞানমূলক" },
+                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - অনুধাবনমূলক" },
+                { chapter: "Chapter 2: কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং - সৃজনশীল" },
+
+                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - মূলবই" },
+                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - জ্ঞানমূলক" },
+                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - অনুধাবনমূলক" },
+                { chapter: "Chapter 3: সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস - সৃজনশীল" },
+
+                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - মূলবই" },
+                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - জ্ঞানমূলক" },
+                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - অনুধাবনমূলক" },
+                { chapter: "Chapter 4: ওয়েব ডিজাইন পরিচিতি ও HTML - সৃজনশীল" },
+
+                { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - মূলবই" },
+                { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - জ্ঞানমূলক" },
+                { chapter: "Chapter 5: प्रोग্রামিং ভাষা - অনুধাবনমূলক" },
+                { chapter: "Chapter 5: প্রোগ্রামিং ভাষা - সৃজনশীল" },
+
+                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - মূলবই" },
+                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - জ্ঞানমূলক" },
+                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - অনুধাবনমূলক" },
+                { chapter: "Chapter 6: ডেটাবেজ ম্যানেজমেন্ট সিস্টেম - সৃজনশীল" }
+            ]
+        };
+
+        // ---------- Robust storage helpers ----------
+        function loadCompletedChapters() {
+            try {
+                const raw = localStorage.getItem('completedChapters');
+                return raw ? JSON.parse(raw) : {};
+            } catch (err) {
+                console.warn('Could not parse saved progress. Resetting stored progress.', err);
+                localStorage.removeItem('completedChapters');
+                return {};
             }
+        }
+
+        function saveCompletedChapters() {
+            try {
+                localStorage.setItem('completedChapters', JSON.stringify(completedChapters));
+            } catch (err) {
+                console.error('Failed to save progress.', err);
+            }
+        }
+
+        let completedChapters = loadCompletedChapters();
+
+        // ---------- Initialization ----------
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeNavigation();
+            renderHomePage();
+            renderSyllabusPage();
+            renderCompletedPage();
+            setupModal();
+            attachSyllabusDelegation(); // single delegated listener (prevents duplicates)
         });
-        const percent = totalParts ? Math.round((completedCount / totalParts) * 100) : 0;
 
-        const card = document.createElement("div");
-        card.className = "subject-progress card";
-        card.innerHTML = `
-            <div class="subject-title">
-                <span>${escapeHtml(subject)}</span>
-                <span>${percent}%</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width:${percent}%;"></div>
-            </div>
-            <div class="progress-text">${completedCount} of ${totalParts} parts completed</div>
-        `;
-        container.appendChild(card);
-    }
-}
+        // ---------- Navigation ----------
+        function initializeNavigation() {
+            const navLinks = document.querySelectorAll('.sidebar-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.dataset.page;
 
-function renderSyllabusPage() {
-    const container = document.querySelector(".syllabus-container");
-    container.innerHTML = "";
+                    // Update active link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
 
-    for (const subject in syllabusData) {
-        let chaptersHTML = "";
-        syllabusData[subject].forEach(chap => {
-            chap.parts.forEach(part => {
-                const isCompleted = completedChapters[subject]?.[chap.chapter]?.includes(part);
-                chaptersHTML += `
-                    <li class="chapter-item">
-                        <span>${escapeHtml(chap.chapter)} - ${part}</span>
-                        ${isCompleted 
-                            ? '<span class="completed-badge">Completed</span>' 
-                            : `<button class="mark-btn" data-subject="${escapeHtmlAttr(subject)}" data-chapter="${escapeHtmlAttr(chap.chapter)}" data-part="${escapeHtmlAttr(part)}">Mark as completed</button>`}
-                    </li>`;
+                    // Show the corresponding page
+                    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+                    const target = document.getElementById(`${page}-page`);
+                    if (target) target.style.display = 'block';
+
+                    // Update views
+                    if (page === 'home') renderHomePage();
+                    if (page === 'syllabus') renderSyllabusPage();
+                    if (page === 'completed') renderCompletedPage();
+                });
             });
-        });
 
-        const card = document.createElement("div");
-        card.className = "card subject-container";
-        card.innerHTML = `
-            <div class="card-header">
-                <div><i class="fas fa-book"></i> ${escapeHtml(subject)}</div>
-            </div>
-            <div class="card-body">
-                <ul class="chapters-list">${chaptersHTML}</ul>
-            </div>
-        `;
-        container.appendChild(card);
-    }
-}
+            // Ensure correct initial visible page (in case markup changed)
+            const active = document.querySelector('.sidebar-menu a.active') || navLinks[0];
+            if (active) {
+                const page = active.dataset.page;
+                document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+                const show = document.getElementById(`${page}-page`);
+                if (show) show.style.display = 'block';
+            }
+        }
 
-function renderCompletedPage() {
-    const container = document.querySelector(".completed-container");
-    container.innerHTML = "";
-    let hasCompleted = false;
+        // ---------- Rendering ----------
+        function renderHomePage() {
+            const progressContainer = document.querySelector('.progress-container');
+            if (!progressContainer) return;
 
-    for (const subject in completedChapters) {
-        let chaptersHTML = "";
-        for (const chap in completedChapters[subject]) {
-            completedChapters[subject][chap].forEach(part => {
-                hasCompleted = true;
-                chaptersHTML += `
-                    <li class="chapter-item">
-                        <span>${escapeHtml(chap)} - ${part}</span>
-                        <span class="completed-badge">Completed</span>
-                    </li>`;
+            progressContainer.innerHTML = '';
+
+            for (const subject in syllabusData) {
+                const totalChapters = Array.isArray(syllabusData[subject]) ? syllabusData[subject].length : 0;
+                const completedCount = completedChapters[subject] ? completedChapters[subject].length : 0;
+                const percentage = totalChapters > 0 ? Math.round((completedCount / totalChapters) * 100) : 0;
+
+                const card = document.createElement('div');
+                card.className = 'subject-progress card';
+                card.innerHTML = `
+                    <div class="subject-title">
+                        <span class="subject-name">${escapeHtml(subject)}</span>
+                        <span class="subject-percent">${percentage}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${percentage}%;"></div>
+                    </div>
+                    <div class="progress-text">${completedCount} of ${totalChapters} tasks completed</div>
+                `;
+
+                progressContainer.appendChild(card);
+            }
+        }
+
+        function renderSyllabusPage() {
+            const syllabusContainer = document.querySelector('.syllabus-container');
+            if (!syllabusContainer) return;
+
+            syllabusContainer.innerHTML = '';
+
+            for (const subject in syllabusData) {
+                const chapters = syllabusData[subject] || [];
+                let chaptersHTML = '';
+
+                chapters.forEach(chapter => {
+                    const isCompleted = completedChapters[subject] && completedChapters[subject].includes(chapter.chapter);
+                    chaptersHTML += `
+                        <li class="chapter-item">
+                            <span class="chapter-name bangla">${escapeHtml(chapter.chapter)}</span>
+                            ${isCompleted ? '<span class="completed-badge">Completed</span>' : `<button class="mark-btn" data-subject="${escapeHtmlAttr(subject)}" data-chapter="${escapeHtmlAttr(chapter.chapter)}">Mark as completed</button>`}
+                        </li>
+                    `;
+                });
+
+                const subjectHTML = document.createElement('div');
+                subjectHTML.className = 'card subject-container';
+                subjectHTML.innerHTML = `
+                    <div class="card-header">
+                        <div><i class="fas fa-book"></i> ${escapeHtml(subject)}</div>
+                        <div>${completedChapters[subject] ? completedChapters[subject].length : 0}/${chapters.length} completed</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="chapters-list">
+                            ${chaptersHTML}
+                        </ul>
+                    </div>
+                `;
+
+                syllabusContainer.appendChild(subjectHTML);
+            }
+        }
+
+        function renderCompletedPage() {
+            const completedContainer = document.querySelector('.completed-container');
+            if (!completedContainer) return;
+
+            completedContainer.innerHTML = '';
+            let hasCompleted = false;
+
+            for (const subject in syllabusData) {
+                if (completedChapters[subject] && completedChapters[subject].length > 0) {
+                    hasCompleted = true;
+                    let chaptersHTML = '';
+                    completedChapters[subject].forEach(chapter => {
+                        chaptersHTML += `
+                            <li class="chapter-item">
+                                <span class="chapter-name bangla">${escapeHtml(chapter)}</span>
+                                <span class="completed-badge">Completed</span>
+                            </li>
+                        `;
+                    });
+
+                    const subjectHTML = document.createElement('div');
+                    subjectHTML.className = 'card subject-container';
+                    subjectHTML.innerHTML = `
+                        <div class="card-header">
+                            <div><i class="fas fa-book"></i> ${escapeHtml(subject)}</div>
+                            <div>${completedChapters[subject].length} completed</div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="chapters-list">
+                                ${chaptersHTML}
+                            </ul>
+                        </div>
+                    `;
+
+                    completedContainer.appendChild(subjectHTML);
+                }
+            }
+
+            if (!hasCompleted) {
+                completedContainer.innerHTML = `
+                    <div class="card">
+                        <div class="card-body" style="text-align:center; padding:40px;">
+                            <i class="fas fa-inbox" style="font-size:3rem; color:#dee2e6; margin-bottom:15px;"></i>
+                            <h3 style="color:#6c757d;">No completed chapters yet</h3>
+                            <p>Start marking chapters as completed from the Syllabus page</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // ---------- Modal ----------
+        function setupModal() {
+            const modal = document.getElementById('confirmation-modal');
+            if (!modal) return;
+
+            const cancelBtn = modal.querySelector('.btn-cancel');
+            const confirmBtn = modal.querySelector('.btn-confirm');
+
+            cancelBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+                confirmBtn.onclick = null; // detach previous
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    modal.setAttribute('aria-hidden', 'true');
+                    confirmBtn.onclick = null;
+                }
+            });
+
+            // close on Esc
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    modal.setAttribute('aria-hidden', 'true');
+                    confirmBtn.onclick = null;
+                }
             });
         }
 
-        if (chaptersHTML) {
-            const card = document.createElement("div");
-            card.className = "card subject-container";
-            card.innerHTML = `
-                <div class="card-header">
-                    <div><i class="fas fa-book"></i> ${escapeHtml(subject)}</div>
-                </div>
-                <div class="card-body">
-                    <ul class="chapters-list">${chaptersHTML}</ul>
-                </div>
-            `;
-            container.appendChild(card);
+        function showConfirmationModal(subject, chapter) {
+            const modal = document.getElementById('confirmation-modal');
+            if (!modal) return;
+
+            const confirmBtn = modal.querySelector('.btn-confirm');
+            confirmBtn.onclick = null; // clear any previous handler
+
+            confirmBtn.onclick = function() {
+                markChapterAsCompleted(subject, chapter);
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+            };
+
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
         }
-    }
 
-    if (!hasCompleted) {
-        container.innerHTML = `
-            <div class="card">
-                <div class="card-body" style="text-align:center; padding:40px;">
-                    <i class="fas fa-inbox" style="font-size:3rem; color:#dee2e6;"></i>
-                    <h3 style="color:#6c757d;">No completed parts yet</h3>
-                    <p>Start marking parts as completed from the Syllabus page</p>
-                </div>
-            </div>
-        `;
-    }
-}
+        // ---------- Marking chapters ----------
+        function markChapterAsCompleted(subject, chapter) {
+            if (!completedChapters[subject]) completedChapters[subject] = [];
+            if (!completedChapters[subject].includes(chapter)) {
+                completedChapters[subject].push(chapter);
+                saveCompletedChapters();
+                // Update views
+                renderHomePage();
+                renderSyllabusPage();
+                renderCompletedPage();
+            }
+        }
 
-// ---------- Modal ----------
-function setupModal() {
-    const modal = document.getElementById("confirmation-modal");
-    const cancelBtn = modal.querySelector(".btn-cancel");
-    const confirmBtn = modal.querySelector(".btn-confirm");
+        // ---------- Event delegation (single listener) ----------
+        function attachSyllabusDelegation() {
+            const container = document.querySelector('.syllabus-container');
+            if (!container) return;
+            if (container.dataset.listener === 'true') return; // already attached
 
-    cancelBtn.addEventListener("click", () => closeModal());
-    window.addEventListener("click", e => { if (e.target === modal) closeModal(); });
-    window.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+            container.addEventListener('click', (e) => {
+                const btn = e.target.closest('.mark-btn');
+                if (!btn) return;
+                const subject = btn.dataset.subject;
+                const chapter = btn.dataset.chapter;
+                if (!subject || !chapter) return;
+                showConfirmationModal(subject, chapter);
+            });
 
-    function closeModal() {
-        modal.style.display = "none";
-        confirmBtn.onclick = null;
-    }
-}
-function showConfirmationModal(subject, chapter, part) {
-    const modal = document.getElementById("confirmation-modal");
-    const confirmBtn = modal.querySelector(".btn-confirm");
-    confirmBtn.onclick = () => {
-        markChapterAsCompleted(subject, chapter, part);
-        modal.style.display = "none";
-    };
-    modal.style.display = "flex";
-}
+            container.dataset.listener = 'true';
+        }
 
-// ---------- Marking ----------
-function markChapterAsCompleted(subject, chapter, part) {
-    if (!completedChapters[subject]) completedChapters[subject] = {};
-    if (!completedChapters[subject][chapter]) completedChapters[subject][chapter] = [];
-    if (!completedChapters[subject][chapter].includes(part)) {
-        completedChapters[subject][chapter].push(part);
-        saveCompletedChapters();
-        renderHomePage();
-        renderSyllabusPage();
-        renderCompletedPage();
-    }
-}
-
-// ---------- Delegation ----------
-function attachSyllabusDelegation() {
-    const container = document.querySelector(".syllabus-container");
-    container.addEventListener("click", e => {
-        const btn = e.target.closest(".mark-btn");
-        if (!btn) return;
-        const subject = btn.dataset.subject;
-        const chapter = btn.dataset.chapter;
-        const part = btn.dataset.part;
-        showConfirmationModal(subject, chapter, part);
-    });
-}
-
-// ---------- Utilities ----------
-function escapeHtml(str) {
-    return String(str).replace(/[&<>\"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[s]));
-}
-function escapeHtmlAttr(str) { return escapeHtml(str).replace(/"/g, '&quot;'); }
-
-</script>
+        // ---------- Utilities ----------
+        function escapeHtml(str) {
+            if (!str && str !== 0) return '';
+            return String(str).replace(/[&<>\"']/g, (s) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[s]);
+        }
+        function escapeHtmlAttr(str) { return escapeHtml(str).replace(/"/g, '&quot;'); }
+    </script>
 </body>
 </html>
